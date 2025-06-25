@@ -1531,8 +1531,9 @@ static int sprdwl_cfg80211_scan(struct wiphy *wiphy,
 			if (!ssids[i].ssid_len)
 				continue;
 			scan_ssids->len = ssids[i].ssid_len;
-			strncpy(scan_ssids->ssid, ssids[i].ssid,
-				ssids[i].ssid_len);
+			// strncpy(scan_ssids->ssid, ssids[i].ssid,
+			// 	ssids[i].ssid_len);
+			strscpy(scan_ssids->ssid, ssids[i].ssid, min(sizeof(scan_ssids->ssid), ssids[i].ssid_len));
 			scan_ssids_len += (ssids[i].ssid_len
 					   + sizeof(scan_ssids->len));
 			scan_ssids = (struct sprdwl_scan_ssid *)

@@ -9,7 +9,8 @@ dtbo-$(CONFIG_ARCH_ROCKCHIP) += \
 	rk356x-pwm11-m1.dtbo\
 	rk356x-pwm15-m1.dtbo\
 	rk356x-spi3-m0-cs0-spidev.dtbo\
-	rk356x-gpu.dtbo
+	rk356x-gpu.dtbo\
+	rk356x-ox03j10.dtbo
 
 scr-$(CONFIG_ARCH_ROCKCHIP) += \
 	rk356x-fixup.scr
